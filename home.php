@@ -228,7 +228,7 @@ $school = $stmt->get_result()->fetch_assoc();
     <script>
         // Activate the tab based on URL parameter
         document.addEventListener('DOMContentLoaded', function() {
-            const tabName = '<?php echo $_GET['tab']; ?>';
+            const tabName = '<?php echo htmlspecialchars($_GET['tab'], ENT_QUOTES, 'UTF-8'); ?>';
             const tabElement = document.querySelector(`button[data-bs-target="#${tabName}"]`);
             if (tabElement) {
                 const tab = new bootstrap.Tab(tabElement);
