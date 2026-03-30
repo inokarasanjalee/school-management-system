@@ -1,0 +1,29 @@
+my_ss_system/
+│
+├── dashboard/                 # Device management files
+│   ├── delete_device.php     # Delete device from inventory
+│   ├── devices.php           # Add new device to inventory
+│   ├── edit_device.php       # Edit existing device details
+│   ├── feedback.php          # Process and send feedback
+│   └── view_devices.php      # View all devices with search
+│
+├── login/                     # Authentication files
+│   ├── fetch_school.php      # AJAX: Auto-fetch school by census
+│   ├── forgot_password.php   # Request password reset
+│   ├── login.php             # Process login credentials
+│   ├── logout.php            # Destroy session and logout
+│   ├── register.php          # Process registration
+│   ├── reset_password.php    # Reset password with token
+│   └── verify_email.php      # Verify email with token
+│
+├── PHPMailer/                 # PHPMailer library files
+│
+├── db.php                     # MySQL database connection
+├── email.php                  # SMTP email configuration
+├── home.php                   # Main dashboard after login
+├── index.php                  # Login/Registration page
+│
+├── README.md                  # Project documentation
+├── database.sql               # Database structure
+├── .gitignore                 # Git ignore file
+└── LICENSE                    # MIT License
