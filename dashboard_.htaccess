@@ -1,0 +1,6 @@
+# /my_ss_system/dashboard/.htaccess
+#
+# SECURITY FIX (Directory Browsing - CWE-548):
+# Disable directory listing for the dashboard subfolder.
+
+Options -Indexes

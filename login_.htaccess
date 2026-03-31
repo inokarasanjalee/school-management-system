@@ -1,0 +1,15 @@
+# /my_ss_system/login/.htaccess
+#
+# SECURITY FIX (Directory Browsing - CWE-548):
+# Explicitly disable directory listing for the login subfolder.
+# This prevents attackers from seeing all login-related PHP scripts.
+
+Options -Indexes
+
+# Block direct browser access to AJAX-only endpoint fetch_school.php
+# (It should only be called via JavaScript fetch, not browsed directly)
+# Uncomment below to enforce referer-based restriction (optional, defense-in-depth):
+# <Files "fetch_school.php">
+#     SetEnvIfNoCase Referer "^http://localhost/my_ss_system/" allow_referer
+#     Require env allow_referer
+# </Files>
