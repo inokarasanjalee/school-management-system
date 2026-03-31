@@ -1,0 +1,28 @@
+# /my_ss_system/.htaccess
+#
+# SECURITY FIXES APPLIED:
+#   [Vuln 3] Directory Browsing (CWE-548)
+#   [Vuln 2] Server information leak via headers
+#
+
+# [Vuln 3 Fix] Disable directory listing globally
+Options -Indexes
+
+# [Vuln 2 Fix] Remove server/PHP version headers and add security headers
+<IfModule mod_headers.c>
+    Header unset X-Powered-By
+    Header always unset X-Powered-By
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "DENY"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Block direct access to sensitive files
+<FilesMatch "^(db|email|session_config|security_headers)\.php$">
+    Require all denied
+</FilesMatch>
+
+# Block backup/temp file types
+<FilesMatch "\.(bak|old|orig|save|swp|sql|log|~)$">
+    Require all denied
+</FilesMatch>
