@@ -1,0 +1,3 @@
+http://localhost/my_ss_system/login/login.php (POST)  # sqlmap.py -u http://localhost/my_ss_system/verify_census.php --forms --level=3 --risk=2 --batch --output-dir=C:\sqlmap_reports\aggressive
+
+email=XJuO&password=UglS
